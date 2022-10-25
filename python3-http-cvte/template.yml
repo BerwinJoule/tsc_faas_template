@@ -1,0 +1,28 @@
+language: python3-http-cvte
+labels:
+  canary: true
+  Git-Owner: "作者"
+  com.openfaas.scale.min: 1
+  com.openfaas.scale.max: 20
+  com.openfaas.scale.zero: true
+fprocess: python index.py
+build_options:
+  - name: dev
+    packages:
+      - make
+      - automake
+      - gcc
+      - g++
+      - subversion
+      - python3-dev
+      - Crypto
+      - musl-dev
+      - libffi-dev
+      - git
+      - libxml2-dev
+      - libxmlsec1-dev
+build_args:
+  TEST_ENABLED: true
+annotations:
+  com.openfaas.health.http.initialDelay: "30s"
+  topic: "用途描述"
