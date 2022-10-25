@@ -16,6 +16,9 @@ class Event:
         self.method = request.method
         self.query = request.args
         self.path = request.path
+        self.json = request.get_json()
+        self.form = request.form
+        self.files = request.files
 
 
 class Context:
